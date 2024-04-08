@@ -6,10 +6,14 @@
     It offers functionalities to create, update, and retrieve information about clients and parties seamlessly.
     The system is built using Django, a high-level Python web framework, providing robustness and scalability.
 
+
+
 🎗 Features
 
     Client Management: Easily add, update, and view client details including their full name, Telegram ID, and auto-generated keyword.
     Party Management: Create and manage parties with titles, allowing for seamless organization and tracking.
+
+
 
 💻 Technologies used
 
@@ -18,6 +22,8 @@
 | Python     | Main programming language |
 | Django     | Web framework             |
 | SQLite     | Database                  |
+
+
 
 🚀 Getting Started
 
@@ -56,7 +62,6 @@ For Windows:
     python manage.py runserver
 
 10.Go to localhost http://localhost:8000/
-    
 
 
 
