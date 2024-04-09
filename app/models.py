@@ -1,23 +1,3 @@
-"""
-Module: models.py
-Description: This module contains the User model and UserManager for managing user creation in a Django project.
-
-Classes:
-    UserManager: A custom user manager class responsible for creating and managing users.
-    User: A custom user model extending the AbstractUser class provided by Django.
-
-Usage:
-    This module defines a custom user model and user manager. To use them, include this module in your Django project
-     and configure the settings to use the custom user model.
-
-Example:
-    # In settings.py
-    AUTH_USER_MODEL = 'your_app.User'
-
-    # In a view or elsewhere
-    from your_app.models import User
-    user = User.objects.create_user(username='example_user', password='password123')
-"""
 import uuid
 
 from django.contrib.auth.base_user import BaseUserManager

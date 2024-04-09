@@ -82,7 +82,7 @@ class GetChineseStorageView(RetrieveAPIView):
     @swagger_auto_schema(
         responses={
             status.HTTP_200_OK: "ChineseStorage retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid ChineseStorage data"
+            status.HTTP_404_NOT_FOUND: "ChineseStorage not found",
         }
     )
     def get(self, request, *args, **kwargs):

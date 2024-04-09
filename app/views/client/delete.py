@@ -23,8 +23,8 @@ class DeleteClientView(DestroyAPIView):
 
     @swagger_auto_schema(
         responses={
-            status.HTTP_200_OK: "Client deleted successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid client data"
+            status.HTTP_204_NO_CONTENT: "Client deleted successfully",
+            status.HTTP_404_NOT_FOUND: "Client not found",
         }
     )
     def delete(self, request, *args, **kwargs):

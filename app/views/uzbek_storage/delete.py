@@ -23,8 +23,8 @@ class DeleteUzbekStorageView(DestroyAPIView):
 
     @swagger_auto_schema(
         responses={
-            status.HTTP_200_OK: "UzbekStorage deleted successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid uzbek_storage data"
+            status.HTTP_204_NO_CONTENT: "UzbekStorage deleted successfully",
+            status.HTTP_404_NOT_FOUND: "UzbekStorage not found",
         }
     )
     def delete(self, request, *args, **kwargs):

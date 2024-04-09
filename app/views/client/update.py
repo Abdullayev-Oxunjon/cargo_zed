@@ -25,7 +25,7 @@ class UpdateClientView(UpdateAPIView):
         request_body=ClientModelSerializer,
         responses={
             status.HTTP_200_OK: "Client updated successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid client data"
+            status.HTTP_404_NOT_FOUND: "Client not found",
         }
     )
     def put(self, request, *args, **kwargs):

@@ -50,7 +50,7 @@ class GetPartyView(RetrieveAPIView):
     @swagger_auto_schema(
         responses={
             status.HTTP_200_OK: "Party retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid party data"
+            status.HTTP_404_NOT_FOUND: "Party not found",
         }
     )
     def get(self, request, *args, **kwargs):

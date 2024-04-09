@@ -23,8 +23,8 @@ class DeleteChineseStorageView(DestroyAPIView):
 
     @swagger_auto_schema(
         responses={
-            status.HTTP_200_OK: "ChineseStorage deleted successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid chinese_storage data"
+            status.HTTP_204_NO_CONTENT: "ChineseStorage deleted successfully",
+            status.HTTP_404_NOT_FOUND: "Not found ChineseStorage",
         }
     )
     def delete(self, request, *args, **kwargs):

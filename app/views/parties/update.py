@@ -25,7 +25,7 @@ class UpdatePartyView(UpdateAPIView):
         request_body=PartyModelSerializer,  # Use your serializer class
         responses={
             status.HTTP_200_OK: "Party updated successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid party data"
+            status.HTTP_404_NOT_FOUND: "Not found Party",
         }
     )
     def put(self, request, *args, **kwargs):

@@ -64,7 +64,7 @@ class GetClientView(RetrieveAPIView):
     @swagger_auto_schema(
         responses={
             status.HTTP_200_OK: "Client retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid client data"
+            status.HTTP_404_NOT_FOUND: "Client not found",
         }
     )
     def get(self, request, *args, **kwargs):

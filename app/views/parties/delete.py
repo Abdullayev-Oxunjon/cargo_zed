@@ -23,8 +23,8 @@ class DeletePartyView(DestroyAPIView):
 
     @swagger_auto_schema(
         responses={
-            status.HTTP_200_OK: "Party deleted successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid party data"
+            status.HTTP_204_NO_CONTENT: "Party deleted successfully",
+            status.HTTP_404_NOT_FOUND: "Party not found",
         }
     )
     def delete(self, request, *args, **kwargs):

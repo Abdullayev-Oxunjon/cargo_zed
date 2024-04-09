@@ -62,7 +62,7 @@ class GetUzbekStorageView(RetrieveAPIView):
     @swagger_auto_schema(
         responses={
             status.HTTP_200_OK: "UzbekStorage retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid UzbekStorage data"
+            status.HTTP_404_NOT_FOUND: "UzbekStorage not found",
         }
     )
     def get(self, request, *args, **kwargs):
