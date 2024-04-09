@@ -212,7 +212,7 @@ class ChineseStorage(models.Model):
         "Box A"
     """
 
-    client_keyword = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='chinese_storages',
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='chinese_storages',
                                        help_text="The keyword of the client.")
     """
     The keyword of the client.

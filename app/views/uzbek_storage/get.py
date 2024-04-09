@@ -19,8 +19,9 @@ from rest_framework import status
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
+
 from app.models import UzbekStorage
-from app.serializers.uzbek_storage import UzbekStorageModelSerializer
+from app.serializer.uzbek_storage import UzbekStorageModelSerializer
 
 
 class ListUzbekStorageView(ListAPIView):
@@ -31,7 +32,7 @@ class ListUzbekStorageView(ListAPIView):
     """
 
     serializer_class = UzbekStorageModelSerializer
-    queryset = UzbekStorage.objects.all()
+    queryset = UzbekStorage.objects.all().order_by("-id")
     permission_classes = [IsAuthenticated]
     filter_backends = [
         DjangoFilterBackend,

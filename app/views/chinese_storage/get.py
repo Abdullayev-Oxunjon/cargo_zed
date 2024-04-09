@@ -23,7 +23,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import ChineseStorage
-from app.serializers.chinese_storage import ChineseStorageModelSerializer
+from app.serializer.chinese_storage import ChineseStorageModelSerializer
 
 
 class ListChineseStorageView(ListAPIView):
@@ -34,7 +34,7 @@ class ListChineseStorageView(ListAPIView):
     """
 
     serializer_class = ChineseStorageModelSerializer
-    queryset = ChineseStorage.objects.all()
+    queryset = ChineseStorage.objects.all().order_by("-id")
 
     # Only allow authenticated users to access this view
     permission_classes = [IsAuthenticated]
@@ -45,9 +45,9 @@ class ListChineseStorageView(ListAPIView):
         OrderingFilter
     ]
 
-    filterset_fields = ['client_keyword__keyword', 'party__title', 'created_at', 'product_title', "box"]
+    filterset_fields = ['client__keyword', 'party__title', 'created_at', 'product_title', "box"]
     ordering_fields = ['created_at']
-    search_fields = ['client_keyword__keyword', 'party__title', 'created_at', 'product_title', "box", "product_count",
+    search_fields = ['client__keyword', 'party__title', 'created_at', 'product_title', "box", "product_count",
                      "product_weight"]
 
     @swagger_auto_schema(

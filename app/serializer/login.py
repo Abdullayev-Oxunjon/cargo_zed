@@ -14,11 +14,11 @@ Example:
     # In views.py or elsewhere
     from rest_framework.views import APIView
     from rest_framework.response import Response
-    from app.serializers import LoginModelSerializer
+    from app.serializer import LoginModelSerializer
 
     class LoginView(APIView):
-        def post(self, request):
-            serializer = LoginModelSerializer(data=request.data)
+        def post(self, client):
+            serializer = LoginModelSerializer(data=client.data)
             if serializer.is_valid():
                 user = serializer.validated_data['user']
                 # Perform further actions with the authenticated user

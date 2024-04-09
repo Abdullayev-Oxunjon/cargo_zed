@@ -3,9 +3,9 @@ from rest_framework import serializers
 from app.models import Client
 
 
-class RequestModelSerializer(serializers.ModelSerializer):
+class ClientModelSerializer(serializers.ModelSerializer):
     """
-    Serializer for handling leave request model.
+    Serializer for handling leave client model.
 
     Attributes:
         fullname (str): The full name of the client.
@@ -22,7 +22,7 @@ class RequestModelSerializer(serializers.ModelSerializer):
         Metadata class for the serializer.
         """
         model = Client
-        fields = ["fullname", "telegram_id", "keyword", "given_time"]
+        fields = "__all__"
         extra_kwargs = {"keyword": {"read_only": True},
                         "given_time": {"read_only": True}}
 

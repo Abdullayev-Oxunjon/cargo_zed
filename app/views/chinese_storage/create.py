@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView
 
 from app.models import ChineseStorage
-from app.serializers.chinese_storage import ChineseStorageModelSerializer
+from app.serializer.chinese_storage import ChineseStorageModelSerializer
 
 
 class CreateChineseStorageView(CreateAPIView):

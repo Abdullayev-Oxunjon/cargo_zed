@@ -7,12 +7,12 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import Party
-from app.serializers.parties import PartyModelSerializer
+from app.serializer.parties import PartyModelSerializer
 
 
 class ListPartyView(ListAPIView):
     serializer_class = PartyModelSerializer
-    queryset = Party.objects.all()
+    queryset = Party.objects.all().order_by("-id")
     #     # Only allow authenticated users to access this view
 
     permission_classes = [IsAuthenticated]

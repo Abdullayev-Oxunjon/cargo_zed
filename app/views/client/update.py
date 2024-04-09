@@ -4,28 +4,28 @@ from rest_framework.generics import UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import Client
-from app.serializers.request import RequestModelSerializer
+from app.serializer.request import ClientModelSerializer
 
 
-class UpdateRequestView(UpdateAPIView):
+class UpdateClientView(UpdateAPIView):
     """
-           API view for update request.
+           API view for update client.
 
            Attributes:
                serializer_class (class): The serializer class used for serializing/deserializing data.
                queryset (QuerySet): The queryset of client objects used by this view.
        """
-    serializer_class = RequestModelSerializer
+    serializer_class = ClientModelSerializer
     queryset = Client.objects.all()
     # Only allow authenticated users to access this view
 
     permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
-        request_body=RequestModelSerializer,
+        request_body=ClientModelSerializer,
         responses={
-            status.HTTP_200_OK: "Request updated successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid request data"
+            status.HTTP_200_OK: "Client updated successfully",
+            status.HTTP_400_BAD_REQUEST: "Invalid client data"
         }
     )
     def put(self, request, *args, **kwargs):

@@ -4,7 +4,7 @@ from rest_framework.generics import UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import Party
-from app.serializers.parties import PartyModelSerializer
+from app.serializer.parties import PartyModelSerializer
 
 
 class UpdatePartyView(UpdateAPIView):

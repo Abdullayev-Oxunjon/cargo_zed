@@ -164,7 +164,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(minutes=15),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
-    "TOKEN_OBTAIN_SERIALIZER": "app.serializer.MyTokenObtainPairSerializer",
+    "TOKEN_OBTAIN_SERIALIZER": "app.serializer.my_token_serializer.MyTokenObtainPairSerializer",
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 

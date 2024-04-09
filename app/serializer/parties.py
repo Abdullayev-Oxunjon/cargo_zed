@@ -6,4 +6,4 @@ from app.models import Party
 class PartyModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Party
-        fields = ['title', 'created_at']
+        fields = "__all__"

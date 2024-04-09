@@ -4,7 +4,7 @@ from rest_framework.generics import DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import ChineseStorage
-from app.serializers.chinese_storage import ChineseStorageModelSerializer
+from app.serializer.chinese_storage import ChineseStorageModelSerializer
 
 
 class DeleteChineseStorageView(DestroyAPIView):

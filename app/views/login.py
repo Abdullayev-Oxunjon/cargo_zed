@@ -6,7 +6,7 @@ Classes:
     LoginAPIView: API view for user login.
 
 Usage:
-    This view is used to handle user login requests. It receives username and password in the request body, validates
+    This view is used to handle user login requests. It receives username and password in the client body, validates
     them using a serializer, and generates JWT tokens upon successful authentication.
 
 Example:
@@ -24,7 +24,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from app.serializers.login import LoginModelSerializer
+from app.serializer.login import LoginModelSerializer
 
 
 class LoginAPIView(APIView):
@@ -44,7 +44,7 @@ class LoginAPIView(APIView):
         Handles POST requests for user login.
 
         Args:
-            request (HttpRequest): The HTTP request object containing user login credentials.
+            request (HttpRequest): The HTTP client object containing user login credentials.
 
         Returns:
             Response: HTTP response with login status and JWT tokens.

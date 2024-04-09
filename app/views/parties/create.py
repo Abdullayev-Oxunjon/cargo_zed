@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView
 
 from app.models import Party
-from app.serializers.parties import PartyModelSerializer
+from app.serializer.parties import PartyModelSerializer
 
 
 class CreatePartyView(CreateAPIView):

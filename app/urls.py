@@ -8,10 +8,10 @@ from app.views.parties.create import CreatePartyView
 from app.views.parties.delete import DeletePartyView
 from app.views.parties.get import ListPartyView, GetPartyView
 from app.views.parties.update import UpdatePartyView
-from app.views.request.create import CreateRequestView
-from app.views.request.delete import DeleteRequestView
-from app.views.request.get import ListRequestView, GetRequestView
-from app.views.request.update import UpdateRequestView
+from app.views.client.create import CreateClientView
+from app.views.client.delete import DeleteClientView
+from app.views.client.get import ListClientView, GetClientView
+from app.views.client.update import UpdateClientView
 from app.views.uzbek_storage.create import CreateUzbekStorageView
 from app.views.uzbek_storage.delete import DeleteUzbekStorageView
 from app.views.uzbek_storage.get import ListUzbekStorageView, GetUzbekStorageView
@@ -19,13 +19,13 @@ from app.views.uzbek_storage.get import ListUzbekStorageView, GetUzbekStorageVie
 urlpatterns = [
     path("login/", LoginAPIView.as_view(), name="login"),
 
-    # Request URLs
+    # Client URLs
 
-    path("create_request/", CreateRequestView.as_view(), name="create_request"),
-    path("list_requests/", ListRequestView.as_view(), name="list_requests"),
-    path("get_request/<int:pk>/", GetRequestView.as_view(), name="get_request"),
-    path("update_request/<int:pk>/", UpdateRequestView.as_view(), name="update_request"),
-    path("delete_request/<int:pk>/", DeleteRequestView.as_view(), name="delete_request"),
+    path("create_client/", CreateClientView.as_view(), name="create_client"),
+    path("list_clients/", ListClientView.as_view(), name="list_clients"),
+    path("get_client/<int:pk>/", GetClientView.as_view(), name="get_client"),
+    path("update_client/<int:pk>/", UpdateClientView.as_view(), name="update_client"),
+    path("delete_client/<int:pk>/", DeleteClientView.as_view(), name="delete_client"),
 
     #  Party URLs
 

@@ -4,7 +4,7 @@ from rest_framework.generics import DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import UzbekStorage
-from app.serializers.uzbek_storage import UzbekStorageModelSerializer
+from app.serializer.uzbek_storage import UzbekStorageModelSerializer
 
 
 class DeleteUzbekStorageView(DestroyAPIView):

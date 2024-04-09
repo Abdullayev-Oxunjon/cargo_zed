@@ -7,10 +7,10 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 
 from app.models import Client
-from app.serializers.request import RequestModelSerializer
+from app.serializer.request import ClientModelSerializer
 
 
-class ListRequestView(ListAPIView):
+class ListClientView(ListAPIView):
     """
         API view for list requests.
 
@@ -18,8 +18,8 @@ class ListRequestView(ListAPIView):
             serializer_class (class): The serializer class used for serializing/deserializing data.
             queryset (QuerySet): The queryset of client objects used by this view.
             """
-    serializer_class = RequestModelSerializer
-    queryset = Client.objects.all()
+    serializer_class = ClientModelSerializer
+    queryset = Client.objects.all().order_by("-id")
 
     # Only allow authenticated users to access this view
     permission_classes = [IsAuthenticated]
@@ -38,8 +38,8 @@ class ListRequestView(ListAPIView):
     @swagger_auto_schema(
 
         responses={
-            status.HTTP_200_OK: "Requests retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid request data"
+            status.HTTP_200_OK: "Clients retrieved successfully",
+            status.HTTP_400_BAD_REQUEST: "Invalid client data"
         }
     )
     def get(self, request, *args, **kwargs):
@@ -48,23 +48,23 @@ class ListRequestView(ListAPIView):
 
 # -----------------------------------------------------------------------------------------------------
 
-class GetRequestView(RetrieveAPIView):
+class GetClientView(RetrieveAPIView):
     """
-        API view for get request.
+        API view for get client.
 
         Attributes:
             serializer_class (class): The serializer class used for serializing/deserializing data.
             queryset (QuerySet): The queryset of client objects used by this view.
     """
-    serializer_class = RequestModelSerializer
+    serializer_class = ClientModelSerializer
     queryset = Client.objects.all()
     # Only allow authenticated users to access this view
     permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
         responses={
-            status.HTTP_200_OK: "Request retrieved successfully",
-            status.HTTP_400_BAD_REQUEST: "Invalid request data"
+            status.HTTP_200_OK: "Client retrieved successfully",
+            status.HTTP_400_BAD_REQUEST: "Invalid client data"
         }
     )
     def get(self, request, *args, **kwargs):

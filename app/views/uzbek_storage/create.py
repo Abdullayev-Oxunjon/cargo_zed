@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.generics import CreateAPIView
 
 from app.models import UzbekStorage
-from app.serializers.uzbek_storage import UzbekStorageModelSerializer
+from app.serializer.uzbek_storage import UzbekStorageModelSerializer
 
 
 class CreateUzbekStorageView(CreateAPIView):
