@@ -91,8 +91,5 @@ For Windows:
 2.Admin credentials
     
     login: admincargo
-<<<<<<< HEAD
     password: 2024
-=======
-    password: 2024
->>>>>>> origin/master
+
