@@ -12,3 +12,5 @@ class ChineseStorageModelSerializer(serializers.ModelSerializer):
                   "product_weight", "client_keyword", "client", "party", "box", "created_at"]
         extra_kwargs = {"trek_code": {"read_only": True},
                         "client": {"write_only": True}}
+
+
