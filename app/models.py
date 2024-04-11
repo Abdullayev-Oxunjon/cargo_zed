@@ -242,6 +242,7 @@ class UzbekStorage(models.Model):
                               help_text="The title of the party.")
     created_at = models.DateField(help_text="The date and time when the product was created.")
     price = models.FloatField(help_text="The price of the product.")
+
     status = models.BooleanField(default=False, help_text="The status of the product.")
 
     def __str__(self):

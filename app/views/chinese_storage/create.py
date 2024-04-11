@@ -1,6 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from app.models import ChineseStorage
 from app.serializer.chinese_storage import ChineseStorageModelSerializer
@@ -17,6 +18,7 @@ class CreateChineseStorageView(CreateAPIView):
 
     serializer_class = ChineseStorageModelSerializer
     queryset = ChineseStorage.objects.all()
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
         request_body=ChineseStorageModelSerializer,  # Use your serializer class

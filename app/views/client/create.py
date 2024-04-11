@@ -1,6 +1,7 @@
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from app.models import Client
 from app.serializer.request import ClientModelSerializer
@@ -17,6 +18,7 @@ class CreateClientView(CreateAPIView):
 
     serializer_class = ClientModelSerializer
     queryset = Client.objects.all()
+    permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
         request_body=ClientModelSerializer,
