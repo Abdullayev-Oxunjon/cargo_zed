@@ -127,23 +127,15 @@ class Client(models.Model):
 class Party(models.Model):
     """
     Model representing a party.
+
+    Attributes:
+        title (CharField): The title of the party.
+        created_at (DateField): The date and time when the party was created.
     """
 
     title = models.CharField(max_length=100, help_text="The title of the party.")
-    """
-    The title of the party.
-    
-    Examples:
-        "Birthday Bash"
-    """
 
     created_at = models.DateField(help_text="The date and time when the party was created.")
-    """
-    The date and time when the party was created.
-
-    Examples:
-        "2024-04-08"
-    """
 
     def __str__(self):
         return self.title
@@ -151,69 +143,38 @@ class Party(models.Model):
 
 # -----------------------------------------------------------------------------------------------------
 
-
 class ChineseStorage(models.Model):
     """
     Model representing Chinese storage of products.
+
+    Attributes:
+        trek_code (UUIDField): The Trek code of the product.
+        product_title (CharField): The title of the product.
+        product_count (PositiveIntegerField): The quantity of the product.
+        product_weight (FloatField): The weight of the product.
+        box (CharField): The box of the product.
+        client (ForeignKey): The keyword of the client.
+        party (ForeignKey): The title of the party.
+        created_at (DateField): The date and time when the product was created.
     """
 
     trek_code = models.UUIDField(default=uuid.uuid4, help_text="The Trek code of the product.", max_length=16)
-    """
-    The Trek code of the product.
-    Examples:
-        "550e8400-e29b-41d4-a716-446655440000"
-    """
 
     product_title = models.CharField(max_length=100, help_text="The title of the product.")
-    """
-    The title of the product.
-    Examples:
-        "Chinese Teapot"
-    """
 
     product_count = models.PositiveIntegerField(help_text="The quantity of the product.")
-    """
-    The quantity of the product.
-    Examples:
-        10
-    """
 
     product_weight = models.FloatField(help_text="The weight of the product.")
-    """
-    The weight of the product.
-    Examples:
-        2.5
-    """
 
     box = models.CharField(max_length=100, help_text="The box of the product.")
-    """
-    The box of the product.
-    Examples:
-        "Box A"
-    """
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='chinese_storages',
-                                       help_text="The keyword of the client.")
-    """
-    The keyword of the client.
-    Examples:
-        Client object (1)
-    """
+                               help_text="The keyword of the client.")
 
     party = models.ForeignKey(Party, on_delete=models.CASCADE, related_name='chinese_storages',
                               help_text="The title of the party.")
-    """
-    The title of the party.
-    Examples:
-        Party object (1)
-    """
 
     created_at = models.DateField(help_text="The date and time when the product was created.")
-    """
-    The date and time when the product was created.
-    Examples:
-        "2024-04-08"
-    """
 
     def __str__(self):
         return self.product_title
