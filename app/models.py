@@ -185,7 +185,6 @@ class ChineseStorage(models.Model):
 class UzbekStorage(models.Model):
     """
     Model representing Uzbek storage of products.
-
     Attributes:
         client (ForeignKey): The client associated with the UzbekStorage.
         chinese_storage (ForeignKey): The ChineseStorage associated with the UzbekStorage.
